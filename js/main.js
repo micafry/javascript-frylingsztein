@@ -36,8 +36,8 @@ const emailInput = document.getElementById('email');
 const mensaje = document.getElementById('mensaje');
 
 
-formulario.addEventListener('submit', (evento) => {
-    evento.preventDefault();
+formulario.addEventListener('submit', (sacarTurno) => {
+    sacarTurno.preventDefault();
 
     const nombre = nombreInput.value;
     const apellido = apellidoInput.value;
