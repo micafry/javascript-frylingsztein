@@ -1,0 +1,30 @@
+body{
+    background-color: rgb(32, 32, 32);
+    color:white;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+  
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  header .header-text {
+    display: block;
+    margin: auto;
+  }
+  header #title {
+    margin-top: 50px;
+    font-size: 60px;
+    color: white;
+    font-family: 'DM Serif Display', serif;
+    text-decoration: underline;
+  }
+  header #subtitle {
+    color: #df057d;
+    font-size: 20px;
+    margin-bottom: 50px;
+  }
+        
