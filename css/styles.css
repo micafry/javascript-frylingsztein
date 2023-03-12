@@ -28,3 +28,7 @@ header {
     margin-bottom: 50px;
   }
         
+
+  #mensajeBienvenida {
+    font-size: large;
+  }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,10 +23,11 @@
     <script src="https://kit.fontawesome.com/fef358cc79.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    
+
 </head>
+
 <body>
-    
+
     <header>
         <section>
             <div class="header">
@@ -37,71 +39,63 @@
 
     <h3>Turnos</h3>
     <div class="turnos-container">
+        
         <div class="animate__zoomIn" id="info-turnos">
-            <p><strong>Información importante a la hora de tomar un turno:</strong><br>
-                La fecha elegida debe ser de <strong>MARTES</strong> a <strong>SÁBADOS</strong> de 10 a 17 horas. Se
-                deben indicar los servicios a realizar detalladamente. Para los tratamientos con precios variables
-                es necesario especificar largo y cantidad de pelo. El turno será confirmado vía e-mail.</p>
+            <p><strong>Información importante a la hora de reservar un turno:</strong><br>
+                Para tratamientos como los reflejos y alisados, es necesario reservar <strong>dos turnos seguidos</strong> debido a la duración de los mismos. En caso de tener mucho pelo o muy largo, por favor reservar <strong>tres turnos</strong>.</p>
         </div>
 
         <div id="formulario">
+            <form   id="formulario">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required><br>
 
-            <!--
-            <form action="https://formspree.io/f/mgeqdwpn" method="POST">
-                <label for="fecha">Seleccione una fecha:
-                    <br><input type="datetime-local" id="fecha" name="fecha"></label><br>
-                <br><label for="nombre">Nombre:
-                    <br><input type="text" id="nombre" name="nombre">
-                </label><br>
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" required><br>
 
-                <br> <label for="apellido">Apellido:
-                    <br><input type="text" id="apellido" name="apellido">
-                </label><br>
-                <br><label for="mail">
-                    Mail:
-                    <br><input type="email" id="mail" name="mail">
-                </label><br>
-                <br> <label for="servicio">
-                    Servicio a realizar:
-                    <br><textarea id="servicio" name="servicio"
-                        placeholder="Corte, retoque de raíces, etc..."></textarea>
-                </label><br><br> 
-            -->
-                
-                <form id="formulario">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" required><br>
-              
-                    <label for="apellido">Apellido:</label>
-                    <input type="text" id="apellido" name="apellido" required><br>
-              
-                    <label for="telefono">Teléfono:</label>
-                    <input type="tel" id="telefono" name="telefono" required><br>
-              
-                    <label for="hora">Hora:</label>
-                    <select id="hora" name="hora" required>
-                      <option value="">Seleccione una hora</option>
-                      <option value="9:00am">9:00am</option>
-                      <option value="10:00am">10:00am</option>
-                      <option value="11:00am">11:00am</option>
-                      <option value="1:00pm">1:00pm</option>
-                      <option value="2:00pm">2:00pm</option>
-                      <option value="3:00pm">3:00pm</option>
-                    </select><br>
-              
-                    <input type="submit" value="Reservar turno">
-                  </form>
-                  <p id="mensaje"></p>
-              
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required><br>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required><br>
 
-                <button type="submit" id="boton-enviar">Enviar</button>
+
+
+                <label for="dia">Día:</label>
+                <select id="dia" name="dia" required>
+                    <option value="">Seleccione un día</option>
+                    <option value="martes">Martes</option>
+                    <option value="miércoles">Miércoles</option>
+                    <option value="jueves">Jueves</option>
+                    <option value="viernes">Viernes</option>
+                    <option value="sábado">Sábado</option>
+
+                </select><br>
+
+                <label for="hora">Hora:</label>
+                <select id="hora" name="hora" required>
+                    <option value="">Seleccione una hora</option>
+                    <option value="11:00">11:00</option>
+                    <option value="12:00">12:00</option>
+                    <option value="13:00">13:00</option>
+                    <option value="14:00">14:00</option>
+                    <option value="15:00">15:00</option>
+                    <option value="16:00">16:00</option>
+                    <option value="17:00">17:00</option>
+                </select><br>
+
+                <input type="submit" value="Reservar turno">
             </form>
+            <p id="mensaje"></p>
+
+
+
         </div>
     </div>
 
-</main>
+    </main>
 
 
-<script src="./js/main.js"></script>
+    <script src="./js/main.js"></script>
 </body>
+
 </html>
