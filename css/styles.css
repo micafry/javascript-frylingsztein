@@ -1,37 +1,128 @@
-body{
-    background-color: rgb(32, 32, 32);
-    color:white;
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    text-align: justify;
-  
+body {
+  background-color: rgb(32, 32, 32);
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  text-align: justify;
+
 }
 
 header {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-  }
-  header .header-text {
-    display: block;
-    margin: auto;
-  }
-  header #title {
-    margin-top: 50px;
-    font-size: 60px;
-    color: white;
-    font-family: 'DM Serif Display', serif;
-    text-decoration: underline;
-  }
-  header #subtitle {
-    color: #df057d;
-    font-size: 20px;
-    margin-bottom: 50px;
-  }
-        
-  form input, #dia, #hora {
-    margin-bottom: 10px;
-max-width: 100%;  }
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
 
+header .header-text {
+  display: block;
+  margin: auto;
+}
 
-  #info-turnos{margin-bottom: 30px;}
+header #title {
+  margin-top: 50px;
+  font-size: 60px;
+  color: white;
+  font-family: 'DM Serif Display', serif;
+  text-decoration: underline;
+}
+
+header #subtitle {
+  color: #df057d;
+  font-size: 20px;
+  margin-bottom: 50px;
+}
+
+form input,
+#dia,
+#hora {
+  margin-bottom: 25px;
+  max-width: 100%;
+
+}
+
+h3 {
+  font-size: 20px;
+  color: #ee63af;
+  margin: 5px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ee63af;
+}
+
+#info-turnos {
+  margin-bottom: 30px;
+  padding: 5px;
+}
+
+form {
+  padding: 10px;
+
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+
+}
+
+select,
+input {
+  font-family: 'Inter', sans-serif;
+  width: 100%;
+  background-color: rgb(39, 39, 39);
+  color: #ffffff;
+  border: 1px solid rgb(39, 39, 39);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  outline: none;
+  margin-bottom: 20px;
+ /* transition: color .5s,background-color .5s;
+*/
+}
+
+input:focus,
+select:focus {
+  background-color: rgb(32, 32, 32);
+  border: 1px solid #555;
+}
+
+#boton {
+  font-family: 'Inter', sans-serif;
+  display: block;
+  width:auto;
+  margin: auto;
+  margin-top: 10px;
+  border-radius: 100px;
+  background-color: #df057d;
+  border: none;
+  padding: 5px;
+  font-size: larger;
+  cursor: pointer;
+
+}
+
+#boton:hover {
+  background-color: #ee63af;
+}
+
+footer {
+  margin-top: 50px;
+  padding: 5px;
+  font-size: 11px;
+  text-align: center;
+  background-color: rgb(39, 39, 39);
+}
+
+@media screen and (min-width:767px) {
+
+  select,
+  input {
+    width: 75%;
+
+  }
+
+  #boton {
+  
+    margin: 0;
+  }
+
+}

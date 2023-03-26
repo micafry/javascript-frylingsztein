@@ -38,23 +38,27 @@
 
     <h3>Turnos</h3>
     <div class="turnos-container">
-        
-            <p id="info-turnos"><strong>Información importante a la hora de reservar un turno:</strong><br>
-                Para tratamientos como los reflejos y alisados, es necesario reservar <strong>dos turnos seguidos</strong> debido a la duración de los mismos. En caso de tener mucho pelo o muy largo, por favor reservar <strong>tres turnos</strong>.</p>
-    
+
+        <p id="info-turnos"><strong>Información importante a la hora de reservar un turno:</strong><br>
+            Para tratamientos como los reflejos y alisados, es necesario reservar <strong>dos turnos seguidos</strong>
+            debido a la duración de los mismos.
+            <br>
+            En caso de tener mucho pelo o muy largo, por favor reservar <strong>tres
+                turnos</strong>.</p>
+
 
         <div id="formulario">
-            <form   id="formulario">
+            <form id="formulario">
                 <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required><br>
+                <input type="text" id="nombre" name="nombre" required placeholder="Ingrese su nombre"><br>
 
                 <label for="apellido">Apellido:</label>
-                <input type="text" id="apellido" name="apellido" required><br>
+                <input type="text" id="apellido" name="apellido" required placeholder="Ingrese su apellido"><br>
 
                 <label for="telefono">Teléfono:</label>
-                <input type="tel" id="telefono" name="telefono" required><br>
+                <input type="tel" id="telefono" name="telefono" required placeholder="Ingrese su teléfono"><br>
                 <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required><br>
+                <input type="email" id="email" name="email" required placeholder="Ingrese su correo electrónico"><br>
 
 
 
@@ -81,7 +85,7 @@
                     <option value="17:00">17:00</option>
                 </select><br>
 
-                <input type="submit" value="Reservar turno">
+                <input type="submit" id="boton" value="Reservar turno">
             </form>
             <p id="mensaje"></p>
 
@@ -91,8 +95,14 @@
     </div>
 
     </main>
+    <footer>
 
-
+        <div class="texto-footer">
+            <p>
+                Dolce Vita Peluquería - Ramón Falcón 1594, CABA. <br> © Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./js/main.js"></script>
 </body>
 
