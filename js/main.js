@@ -36,7 +36,7 @@ const emailInput = document.getElementById('email');
 const mensaje = document.getElementById('mensaje');
 
 const tratamientoDiv = document.querySelector('#tratamientos-container');
-fetch('./data.json')
+fetch('https://micafry.github.io/json-entrega/')
   .then(response => response.json())
   .then(data => {
     
@@ -59,7 +59,6 @@ fetch('./data.json')
     console.log(`Hubo un error: ${error}`);
   });
 
-
 formulario.addEventListener('submit', (sacarTurno) => {
     sacarTurno.preventDefault();
     
@@ -69,7 +68,6 @@ const nombre = nombreInput.value;
  const email = emailInput.value;
  const dia = diaInput.value;
  const hora = horaInput.value;
-
 
  const cliente = function (nombre, apellido, telefono, email, dia, hora) {
      this.nombre = nombre,
