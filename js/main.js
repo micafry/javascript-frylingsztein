@@ -26,7 +26,6 @@ function reservarHora(dia, hora, nombre, apellido, telefono, email) {
     }
 }
 
-
 const formulario = document.getElementById('formulario')
 const nombreInput = document.getElementById('nombre');
 const apellidoInput = document.getElementById('apellido');
@@ -36,6 +35,29 @@ const horaInput = document.getElementById('hora');
 const emailInput = document.getElementById('email');
 const mensaje = document.getElementById('mensaje');
 
+const tratamientoDiv = document.querySelector('#tratamientos-container');
+fetch('./data.json')
+  .then(response => response.json())
+  .then(data => {
+    
+    data.forEach(tratamiento => {
+      const input = document.createElement('input');
+      input.type = 'checkbox';
+      input.id = tratamiento.nombre;
+      input.name = 'tratamientos';
+      input.value = tratamiento.precio;
+
+      const label = document.createElement('label');
+      label.for = tratamiento.nombre;
+      label.textContent = `${tratamiento.nombre}: ${tratamiento.precio}`;
+
+      tratamientoDiv.appendChild(input);
+      tratamientoDiv.appendChild(label);
+      });
+  })
+  .catch(error => {
+    console.log(`Hubo un error: ${error}`);
+  });
 
 
 formulario.addEventListener('submit', (sacarTurno) => {
@@ -48,6 +70,7 @@ const nombre = nombreInput.value;
  const dia = diaInput.value;
  const hora = horaInput.value;
 
+
  const cliente = function (nombre, apellido, telefono, email, dia, hora) {
      this.nombre = nombre,
          this.apellido = apellido,
@@ -56,8 +79,6 @@ const nombre = nombreInput.value;
          this.dia = dia,
          this.hora = hora
  }
-
-
 
  const cliente1 = new cliente(nombre, apellido, telefono, email, dia, hora);
  localStorage.setItem('datos del cliente', JSON.stringify(cliente1))
