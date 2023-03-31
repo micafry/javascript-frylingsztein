@@ -36,7 +36,7 @@ const emailInput = document.getElementById('email');
 const mensaje = document.getElementById('mensaje');
 
 const tratamientoDiv = document.querySelector('#tratamientos-container');
-fetch('https://micafry.github.io/json-entrega/')
+fetch('./js/data.json')
   .then(response => response.json())
   .then(data => {
     
