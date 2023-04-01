@@ -36,7 +36,7 @@ const emailInput = document.getElementById('email');
 const tratamientosInput = document.getElementById ('tratamientos');
 const mensaje = document.getElementById('mensaje');
 
-
+//FETCH
 fetch('./js/data.json')
   .then(response => response.json())
   .then(data => {
