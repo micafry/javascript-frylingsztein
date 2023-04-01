@@ -33,27 +33,20 @@ const telefonoInput = document.getElementById('telefono');
 const diaInput = document.getElementById('dia');
 const horaInput = document.getElementById('hora');
 const emailInput = document.getElementById('email');
+const tratamientosInput = document.getElementById ('tratamientos');
 const mensaje = document.getElementById('mensaje');
 
-const tratamientoDiv = document.querySelector('#tratamientos-container');
+
 fetch('./js/data.json')
   .then(response => response.json())
   .then(data => {
-    
     data.forEach(tratamiento => {
-      const input = document.createElement('input');
-      input.type = 'checkbox';
-      input.id = tratamiento.nombre;
-      input.name = 'tratamientos';
-      input.value = tratamiento.precio;
+      const opcion = document.createElement('option');
+      opcion.value = tratamiento.nombre;
+      opcion.textContent = `${tratamiento.nombre}: ${tratamiento.precio}`;
 
-      const label = document.createElement('label');
-      label.for = tratamiento.nombre;
-      label.textContent = `${tratamiento.nombre}: ${tratamiento.precio}`;
-
-      tratamientoDiv.appendChild(input);
-      tratamientoDiv.appendChild(label);
-      });
+      tratamientosInput.appendChild(opcion);
+    });
   })
   .catch(error => {
     console.log(`Hubo un error: ${error}`);
@@ -68,17 +61,19 @@ const nombre = nombreInput.value;
  const email = emailInput.value;
  const dia = diaInput.value;
  const hora = horaInput.value;
+ const tratamiento = tratamientosInput.value;
 
- const cliente = function (nombre, apellido, telefono, email, dia, hora) {
+ const cliente = function (nombre, apellido, telefono, email, dia, hora, tratamiento) {
      this.nombre = nombre,
          this.apellido = apellido,
          this.telefono = telefono,
          this.email = email,
          this.dia = dia,
-         this.hora = hora
- }
+         this.hora = hora,
+         this.tratamiento = tratamiento
+         }
 
- const cliente1 = new cliente(nombre, apellido, telefono, email, dia, hora);
+ const cliente1 = new cliente(nombre, apellido, telefono, email, dia, hora, tratamiento);
  localStorage.setItem('datos del cliente', JSON.stringify(cliente1))
  const datosCliente = localStorage.getItem('datos del cliente')
  const datos = JSON.parse(datosCliente);
@@ -91,7 +86,7 @@ const nombre = nombreInput.value;
 
  confirmacion.fire({
      title: '¿Desea confirmar los datos ingresados?',
-     text: `Nombre: ${nombre} ${apellido},  Teléfono: ${telefono}, Email: ${email}, Turno: ${dia} ${hora} horas`,
+     text: `Nombre: ${nombre} ${apellido},  Teléfono: ${telefono}, Email: ${email}, Turno: ${dia} ${hora} horas, Tratamiento: ${tratamiento}`, 
      icon: 'question',
      showCancelButton: true,
      confirmButtonText: 'Confirmar',
@@ -102,7 +97,7 @@ const nombre = nombreInput.value;
      .then((resultado) => {
          if (resultado.value) {
              if (reservarHora(dia, hora, nombre, apellido, telefono, email)) {
-                 mensaje.textContent = `Gracias ${nombre} ${apellido}! Su turno ha sido reservado para el día ${dia} a las ${hora}.`;
+                 mensaje.textContent = `Gracias ${nombre} ${apellido}! Su turno para ${tratamiento} ha sido reservado para el día ${dia} a las ${hora}.`;
                  swal.fire({
                      title: 'Turno reservado con éxito',
                      icon: 'success'
@@ -113,6 +108,7 @@ const nombre = nombreInput.value;
                  telefonoInput.value = '';
                  diaInput.value = '';
                  horaInput.value = '';
+                 tratamientosInput.value = '';
              } else {
                  mensaje.textContent = `Lo sentimos, el turno del ${dia} a las ${hora} ya está reservado. Por favor, seleccione otra fecha/hora.`;
                  swal.fire({
@@ -124,3 +120,5 @@ const nombre = nombreInput.value;
          }
      })
 });
+
+

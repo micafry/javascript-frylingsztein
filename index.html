@@ -50,7 +50,7 @@
         </p>
 
 
-        <div id="formulario">
+        <div id="formulario" >
             <form id="formulario">
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" required placeholder="Ingrese su nombre"><br>
@@ -89,11 +89,13 @@
                 </select><br>
 
                 <label for="tratamientos">Tratamientos:</label>
-                <div id="tratamientos-container">
-    </div>
+
+                <select id="tratamientos" name="tratamientos"><option value="">Seleccione un tratamiento</option></select>
+              <!--  <div id="tratamientos-container">
+    </div>-->
 
 
-                <input type="submit" id="boton" value="Reservar turno">
+               <input type="submit" id="boton" value="Reservar turno">
             </form>
             <p id="mensaje"></p>
 
@@ -111,7 +113,7 @@
         </div>
     </footer>
 
-
+   
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./js/main.js"></script>
 </body>

@@ -117,21 +117,6 @@ footer {
   background-color: rgb(39, 39, 39);
 }
 
-#tratamientos-container {
-  background-color: rgb(39, 39, 39);
-  display: block;
-  cursor: pointer;
-  margin-bottom: 20px;
-  padding: 20px;
-}
-
-#tratamientos-container input {
-  display: block;
-  position: absolute;
-  cursor: pointer;
-  margin: 0;
-}
-
 
 @media screen and (min-width:767px) {
 
